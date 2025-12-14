@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haus Climatização - Climatização Empresarial em Curitiba</title>
+    <meta name="description" content="Haus Climatização: Instalação, Manutenção (incluindo PMOC) e Venda de Ar-Condicionado e Aquecedores para Empresas em Curitiba. Soluções B2B com PMOC e Eficiência Garantida.">
+    <meta name="keywords" content="climatização Curitiba, ar-condicionado empresarial, manutenção PMOC, aquecedores B2B, instalação ar-condicionado PR">
+    <meta name="author" content="Haus Climatização">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Haus Climatização",
+        "address": {"@type": "PostalAddress", "streetAddress": "Rua Delegado Leopoldo Belczak, 2352", "addressLocality": "Capão da Imbuia, Curitiba", "addressRegion": "PR", "postalCode": "81130-000", "addressCountry": "BR"},
+        "telephone": "+55 41 99999-9999",
+        "url": "https://hausclimatizacao.com",
+        "sameAs": ["https://www.instagram.com/haus.climatizacao/"]
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #007BFF; /* Azul primário da logo para CTAs e headers */
+            --secondary: #17A2B8; /* Azul claro para cards e destaques */
+            --accent: #FFC107; /* Amarelo para estrelas/depoimentos */
+            --text: #333333; /* Texto principal */
+            --bg: #F8F9FA; /* Fundo neutro */
+            --white: #FFFFFF;
+            --header-bg: #00b8c4; /* Nova cor do cabeçalho */
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; color: var(--text); line-height: 1.6; background-color: var(--bg); }
+        header { background-color: var(--header-bg); padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav { display: flex; justify-content: flex-start; align-items: center; max-width: 1200px; margin: 0 auto; gap: 1rem; /* Espaço reduzido entre logo e menu para alinhamento à esquerda */ }
+        .logo-img { max-width: 150px; height: auto; } /* Logo responsiva */
+        .menu { display: flex; list-style: none; margin-left: 0; /* Desloca menu mais à esquerda, logo após a logo */ }
+        .menu li { margin-left: 2rem; }
+        .menu a { text-decoration: none; color: var(--white); font-weight: 500; transition: color 0.3s; } /* Texto branco para contraste com header turquesa */
+        .menu a:hover { color: var(--primary); }
+        .hamburger { margin-left: auto; display: none; flex-direction: column; cursor: pointer; } /* Hamburger à direita */
+        .hamburger span { width: 25px; height: 3px; background-color: var(--white); margin: 3px 0; } /* Linhas brancas para visibilidade */
+        section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .hero { background-image: url('https://source.unsplash.com/1600x900/?office,air-conditioner,curitiba'); background-size: cover; background-position: center; color: var(--white); text-align: center; padding: 8rem 2rem 4rem; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--white); text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+        .cta { background-color: var(--primary); color: var(--white); padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px; transition: transform 0.3s, background-color 0.3s; display: inline-block; margin: 0.5rem; }
+        .cta:hover { transform: scale(1.05); background-color: var(--secondary); }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin: 2rem 0; text-align: center; }
+        .stat { background-color: var(--white); padding: 1rem; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .services-grid, .brands-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .card { background-color: var(--white); padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card i { font-size: 3rem; color: var(--secondary); margin-bottom: 1rem; }
+        .depoimentos { background-color: var(--secondary); color: var(--white); padding: 2rem; border-radius: 10px; margin: 2rem 0; }
+        .depoimento { margin-bottom: 1rem; }
+        .stars { color: var(--accent); }
+        .brands-grid img { max-width: 150px; height: auto; filter: grayscale(50%); transition: filter 0.3s; }
+        .brands-grid img:hover { filter: grayscale(0%); }
+        .popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: var(--white); padding: 2rem; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); z-index: 2000; }
+        .popup form { display: flex; flex-direction: column; }
+        .popup input, .popup select, .popup textarea { margin-bottom: 1rem; padding: 0.75rem; border: 1px solid var(--secondary); border-radius: 5px; }
+        footer { background-color: var(--primary); color: var(--white); text-align: center; padding: 2rem; }
+        @media (max-width: 768px) { 
+            nav { justify-content: space-between; } /* Ajuste para mobile: logo à esquerda, hamburger à direita */
+            .menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; background-color: var(--header-bg); width: 100%; padding: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); } /* Menu com cor do header em mobile */
+            .menu.show { display: flex; }
+            .hamburger { display: flex; margin-left: auto; }
+            .hero h1 { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .logo-img { max-width: 120px; } /* Logo menor em mobile */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765659704/logohaus_nsdvwg.png" alt="Haus Climatização" class="logo-img">
+            <ul class="menu" id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Climatização Empresarial em Curitiba: Conforto Total para Sua Equipe, com Eficiência Garantida</h1>
+        <p>Instalação, Manutenção (incluindo PMOC) e Venda de Ar-Condicionado e Aquecedores – Cobertura em Toda Região Metropolitana. Soluções personalizadas para empresas, com melhor custo-benefício e conformidade legal.</p>
+        <a href="#" class="cta" id="orcamento">Solicite Orçamento Gratuito</a>
+        <a href="https://wa.me/5541999999999?text=Olá, solicite orçamento para climatização B2B em Curitiba" class="cta">Fale pelo WhatsApp</a>
+    </section>
+
+    <section id="stats">
+        <div class="stats">
+            <div class="stat"><h3>20+</h3><p>Anos de Experiência Coletiva</p></div>
+            <div class="stat"><h3>100%</h3><p>Aprovação de Clientes</p></div>
+            <div class="stat"><h3>50+</h3><p>Empresas Atendidas em Curitiba</p></div>
+            <div class="stat"><h3>Região Metropolitana</h3><p>Cobertura Completa (Capão da Imbuia + Colombo, Pinhais)</p></div>
+        </div>
+    </section>
+
+    <section id="servicos-rapidos">
+        <h2>Nossos Serviços Principais</h2>
+        <div class="services-grid">
+            <div class="card">
+                <i class="fas fa-snowflake"></i>
+                <h3>Instalação Profissional</h3>
+                <p>Sistemas centrais para empresas: 10.000 a 100.000 BTUs, em até 48h. Soluções personalizadas com tecnologia moderna para durabilidade e eficiência.</p>
+                <a href="https://wa.me/5541999999999?text=Interesse em instalação" class="cta">Solicite Orçamento</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-wrench"></i>
+                <h3>Manutenção Preventiva e Corretiva</h3>
+                <p>Reduza downtime em 50% e evite transtornos. Limpeza com produtos Anvisa-aprovados para qualidade do ar interno.</p>
+                <a href="https://wa.me/5541999999999?text=Interesse em manutenção" class="cta">Agende Manutenção</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-file-alt"></i>
+                <h3>PMOC - Plano de Manutenção</h3>
+                <p>Conformidade legal (Lei 13.589/2018 e Anvisa) para empresas, hospitais e condomínios. Evite multas com nosso Termo de Responsabilidade Técnica.</p>
+                <a href="https://wa.me/5541999999999?text=Interesse em PMOC" class="cta">Consulte PMOC</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos">
+        <h2>O Que Nossos Clientes Falam</h2>
+        <div class="depoimentos">
+            <div class="depoimento">
+                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                <p>"Instalação impecável no nosso escritório em Curitiba – equipe pontual e técnica! Reduzimos custos em 30%."</p>
+                <cite>– Gerente, Empresa X, Capão da Imbuia</cite>
+            </div>
+            <div class="depoimento">
+                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                <p>"Manutenção preventiva evitou paradas no inverno. Atendimento ágil e preço justo – recomendável para B2B."</p>
+                <cite>– Síndico, Condomínio Y, Pinhais</cite>
+            </div>
+            <div class="depoimento">
+                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                <p>"PMOC completo e conformidade total. Profissionais capacitados, como em grandes indústrias."</p>
+                <cite>– Facilities, Indústria Z, Colombo</cite>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes">
+        <h2>Soluções para Seu Negócio em Curitiba</h2>
+        <div class="services-grid">
+            <div class="card">
+                <img src="https://source.unsplash.com/250x150/?office,curitiba" alt="Escritórios">
+                <h3>Seu Escritório</h3>
+                <p>Climatização eficiente para produtividade o ano todo, com foco em economia energética.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/250x150/?industry" alt="Indústria">
+                <h3>Sua Indústria</h3>
+                <p>Sistemas robustos para galpões e fábricas, incluindo aquecedores para invernos frios.</p>
+            </div>
+            <div class="card">
+                <img src="https://source.unsplash.com/250x150/?commerce" alt="Comércio">
+                <h3>Seu Comércio</h3>
+                <p>Instalação rápida para lojas e shoppings, com manutenção para evitar interrupções.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="marcas">
+        <h2>Nossos Fornecedores e Marcas Parceiras</h2>
+        <p>Garantimos qualidade com marcas renomadas, suporte especializado e peças originais.</p>
+        <div class="brands-grid">
+            <img src="https://source.unsplash.com/150x50/?daikin" alt="Daikin" loading="lazy">
+            <img src="https://source.unsplash.com/150x50/?lg" alt="LG" loading="lazy">
+            <img src="https://source.unsplash.com/150x50/?rheem" alt="Rheem" loading="lazy">
+            <img src="https://source.unsplash.com/150x50/?bosch" alt="Bosch" loading="lazy">
+            <img src="https://source.unsplash.com/150x50/?carrier" alt="Carrier" loading="lazy">
+            <img src="https://source.unsplash.com/150x50/?gree" alt="Gree" loading="lazy">
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre a Haus Climatização</h2>
+        <p>Fundada em Curitiba, a Haus Climatização traz expertise local para soluções B2B – mais de 20 anos de experiência coletiva na equipe. Especializados em climatização para empresas, condomínios e indústrias na região metropolitana. Atendemos com agilidade, qualidade certificada e foco em conformidade (PMOC incluso).</p>
+    </section>
+
+    <section id="contato">
+        <h2>Entre em Contato para Soluções B2B</h2>
+        <form action="mailto:contato@hausclimatizacao.com" method="post" enctype="text/plain">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="empresa" placeholder="Nome da Empresa" required>
+            <input type="number" name="espaco" placeholder="Tamanho do Espaço (m²)" required>
+            <select name="servico" required>
+                <option value="">Tipo de Serviço</option>
+                <option value="instalacao">Instalação</option>
+                <option value="manutencao">Manutenção</option>
+                <option value="pmoc">PMOC</option>
+                <option value="venda">Venda de Produtos</option>
+            </select>
+            <textarea name="mensagem" placeholder="Descreva sua necessidade (ex.: PMOC para conformidade legal)" required></textarea>
+            <button type="submit" class="cta">Enviar Mensagem</button>
+        </form>
+        <p>Telefone: +55 41 99999-9999 | WhatsApp: <a href="https://wa.me/5541999999999" class="cta">Clique Aqui</a> | Endereço: Rua Delegado Leopoldo Belczak, 2352, Capão da Imbuia, Curitiba - PR</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Haus Climatização. Todos os direitos reservados. | <a href="https://www.instagram.com/haus.climatizacao/" style="color: var(--white);">Instagram</a></p>
+    </footer>
+
+    <div class="popup" id="popup-orcamento">
+        <h3>Solicite Orçamento Gratuito</h3>
+        <form>
+            <input type="text" placeholder="Nome da Empresa" required>
+            <input type="email" placeholder="Email Corporativo" required>
+            <input type="text" placeholder="Tipo de Serviço (ex.: PMOC)" required>
+            <textarea placeholder="Detalhes do Projeto" required></textarea>
+            <button type="submit" class="cta">Enviar</button>
+            <button onclick="fecharPopup()" style="background: var(--text); color: var(--white);">Fechar</button>
+        </form>
+    </div>
+
+    <script>
+        // Hamburger Menu
+        document.getElementById('hamburger').addEventListener('click', () => document.getElementById('menu').classList.toggle('show'));
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => anchor.addEventListener('click', e => { e.preventDefault(); document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); }));
+        // Popup Orçamento
+        document.getElementById('orcamento').addEventListener('click', e => { e.preventDefault(); document.getElementById('popup-orcamento').style.display = 'block'; });
+        function fecharPopup() { document.getElementById('popup-orcamento').style.display = 'none'; }
+    </script>
+</body>
+</html>
