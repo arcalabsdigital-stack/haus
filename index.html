@@ -141,6 +141,34 @@
         .form-submit{margin-top:1rem;}
         .form-submit button{background:var(--accent);color:var(--white);border:none;padding:1rem 2rem;border-radius:10px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;width:100%;text-transform:uppercase;}
         .form-submit button:hover{background:#8e713e;transform:translateY(-2px);box-shadow:var(--shadow-hover);}
+        
+        /* === NOVA ANIMAÇÃO DO CORAÇÃO === */
+        @keyframes pulseHeart {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        .heart-pulse {
+            display: inline-block;
+            animation: pulseHeart 1.5s infinite;
+        }
+        .footer-dev {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .footer-dev a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer-dev a:hover {
+            text-decoration: underline;
+        }
+        /* === FIM DA NOVA ANIMAÇÃO === */
+
         @media (max-width: 768px){
             header{padding:0.5rem 1rem;}
             ul.menu{display:none;flex-direction:column;position:absolute;top:100%;left:0;background:var(--header-bg);width:100%;padding:1.5rem;gap:1rem;}
@@ -379,39 +407,14 @@
     </main>
     <footer role="contentinfo" aria-label="Rodapé com informações de copyright">
         <p>&copy; 2024 Haus Climatização. Todos os direitos reservados. | <a href="https://www.instagram.com/haus.climatizacao/" class="footer-link" rel="noopener noreferrer" aria-label="Visite nosso Instagram">Instagram</a></p>
-         <div class="dev-credit">
-      Site desenvolvido com <span class="beating-heart">❤️</span> por <a href="https://www.arcalabs.com.br/" target="_blank" rel="noopener noreferrer">Arca</a>
-    </div>    
+        <!-- === RODAPÉ ATUALIZADO COM ANIMAÇÃO === -->
+        <p class="footer-dev">
+            Site desenvolvido com <span class="heart-pulse">❤️</span> por <a href="https://arcalabs.com.br" target="_blank" rel="noopener noreferrer">Arca</a>
+        </p>
     </footer>
     <script type="module">
-        function validateInput(input) {
-            const field = input.closest('.form-field');
-            if (field) {
-                if (input.validity.valid && input.value.trim() !== '') {
-                    input.style.borderColor = 'rgba(167, 133, 72, 0.5)';
-                } else {
-                    input.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                }
-            }
-        }
-
-        document.querySelectorAll('.contact-form .form-input, .contact-form .form-textarea').forEach(input => {
-            input.addEventListener('input', () => validateInput(input));
-            input.addEventListener('blur', () => validateInput(input));
-        });
-
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
-            const form = e.target;
-            if (!form.checkValidity()) {
-                e.preventDefault();
-                form.querySelectorAll('.form-input:invalid, .form-textarea:invalid').forEach(el => {
-                    el.style.borderColor = '#dc3545';
-                });
-                console.log('Form inválido - Corrija campos');
-                return;
-            }
-            // Let the form submit to Formspree
-        });
+        // O código do EmailJS foi removido.
+        // O código restante é para a interatividade visual da página.
 
         const hamburger = document.getElementById('hamburger');
         const menu = document.getElementById('menu');
