@@ -34,7 +34,7 @@
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX');
     </script>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com data:; img-src 'self' data: https:; media-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.emailjs.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; font-src 'self' fonts.gstatic.com cdnjs.cloudflare.com data:; img-src 'self' data: https:; media-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <script type="application/ld+json">
@@ -313,13 +313,13 @@
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828119/logo_york_yxznho.png" alt="Logo York" loading="lazy"></div>
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828114/logo_rheem_g1xvx6.png" alt="Logo Rheem" loading="lazy"></div>
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828105/logo_philco_jkpaiu.png" alt="Logo Philco" loading="lazy"></div>
-                <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828093/logo_lg_s8tzul.png" alt="Logo LG" loading="lazy"></div>
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828085/logo_komeco_zqetjx.png" alt="Logo Komeco" loading="lazy"></div>
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828078/logo_gree_cbdhgi.png" alt="Logo Gree" loading="lazy"></div>
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828071/logo_fujitsu_x41lup.png" alt="Logo Fujitsu" loading="lazy"></div>
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828065/logo_elgin_kxgemd.png" alt="Logo Elgin" loading="lazy"></div>
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828058/logo_daikin_woz9eg.png" alt="Logo Daikin" loading="lazy"></div>
                 <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828049/logo_carrier_fnrnhq.png" alt="Logo Carrier" loading="lazy"></div>
+                <div class="brand-card"><img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1765828093/logo_lg_s8tzul.png" alt="Logo LG" loading="lazy"></div>
             </div>
         </section>
         <section id="contato" aria-labelledby="contato-title">
@@ -348,7 +348,7 @@
                 </div>
                 <div class="contact-form-wrapper">
                     <h3>Solicite um Orçamento</h3>
-                    <form id="contact-form" class="contact-form" aria-label="Formulário de contato para orçamentos B2B" novalidate>
+                    <form action="https://formspree.io/f/hausclimatizacao@gmail.com" method="POST" class="contact-form" aria-label="Formulário de contato para orçamentos B2B">
                         <div class="form-field">
                             <label for="nome" class="form-label">NOME COMPLETO</label>
                             <input type="text" id="nome" name="nome" class="form-input" placeholder="Seu nome completo" required aria-required="true">
@@ -381,16 +381,6 @@
         <p>&copy; 2024 Haus Climatização. Todos os direitos reservados. | <a href="https://www.instagram.com/haus.climatizacao/" class="footer-link" rel="noopener noreferrer" aria-label="Visite nosso Instagram">Instagram</a></p>
     </footer>
     <script type="module">
-        const scriptURL = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
-        const script = document.createElement('script');
-        script.src = scriptURL;
-        script.defer = true;
-        document.head.appendChild(script);
-        script.onload = () => {
-            emailjs.init('YOUR_PUBLIC_KEY');
-            console.log('EmailJS carregado - Verifique chaves em produção');
-        };
-
         function validateInput(input) {
             const field = input.closest('.form-field');
             if (field) {
@@ -402,12 +392,12 @@
             }
         }
 
-        document.querySelectorAll('#contact-form .form-input, #contact-form .form-textarea').forEach(input => {
+        document.querySelectorAll('.contact-form .form-input, .contact-form .form-textarea').forEach(input => {
             input.addEventListener('input', () => validateInput(input));
             input.addEventListener('blur', () => validateInput(input));
         });
 
-        document.getElementById('contact-form').addEventListener('submit', (e) => {
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
             const form = e.target;
             if (!form.checkValidity()) {
                 e.preventDefault();
@@ -417,21 +407,7 @@
                 console.log('Form inválido - Corrija campos');
                 return;
             }
-            e.preventDefault();
-            console.log('Enviando form principal...');
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form).then(() => {
-                alert('Mensagem enviada com sucesso!');
-                console.log('Form enviado com sucesso');
-            }).catch((error) => {
-                alert('Erro ao enviar. Tente WhatsApp.');
-                console.error('Erro EmailJS:', error);
-            }).finally(() => {
-                form.reset();
-                form.querySelectorAll('.form-input, .form-textarea').forEach(el => {
-                    el.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                    validateInput(el);
-                });
-            });
+            // Let the form submit to Formspree
         });
 
         const hamburger = document.getElementById('hamburger');
